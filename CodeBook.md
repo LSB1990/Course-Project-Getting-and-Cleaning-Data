@@ -97,6 +97,11 @@ bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of e
 
 angle(): Angle between to vectors.
 
+### Additional Variable: 
+
+Activities: type of activities that are performed during the measurement.
+Subject ID: unique number that are identifying or suject. 
+
 Finallly the data are from http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones#
 
 And more informations can be found at that adress.
