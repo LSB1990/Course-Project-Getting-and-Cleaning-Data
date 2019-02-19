@@ -15,11 +15,11 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 You should create one R script called run_analysis.R that does the following.
 
-*Merges the training and the test sets to create one data set.
-*Extracts only the measurements on the mean and standard deviation for each measurement.
-*Uses descriptive activity names to name the activities in the data set
-*Appropriately labels the data set with descriptive variable names.
-*From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject. " 
+* Merges the training and the test sets to create one data set.
+* Extracts only the measurements on the mean and standard deviation for each measurement.
+* Uses descriptive activity names to name the activities in the data set
+* Appropriately labels the data set with descriptive variable names.
+* From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject. " 
 
 ## Content of the Github
 
@@ -33,14 +33,14 @@ In this repository, you will find:
 
 I structured the script in 5 main step: 
 
-*Step 0: common step in all my code which consist on loading the good package (here dplyr and plyr) and the good data (here the data described above)
+* Step 0: common step in all my code which consist on loading the good package (here dplyr and plyr) and the good data (here the data described above)
 
-*Step 1: Getting the different data and create dataframe according to the structure describe above. This is the basic building block that we want to clean, combine and tidying later on. I also take care on this step to properly name all the column. This dataframe are Feature_list (with all the different features -- column names), totaltrain (which is all the data for training part) and totaltest (which is all the data for the test part)
+* Step 1: Getting the different data and create dataframe according to the structure describe above. This is the basic building block that we want to clean, combine and tidying later on. I also take care on this step to properly name all the column. This dataframe are Feature_list (with all the different features -- column names), totaltrain (which is all the data for training part) and totaltest (which is all the data for the test part)
 
-*step2: Extracting the good mapping table. I basicaly make two "mapping" table. First one is Label_activity to associate the number of the activity with the name of it (Waling, laying, ...). The second one is a subset of Feature_list that consist on all the feature that concern mean and std. I notice that in the different features names some of them add capital letter for mean (e.g. "angle(Y,gravityMean)" ) therefore when I subset it I made it specific that mean and std may have capital letter as well as small cap. 
+* step2: Extracting the good mapping table. I basicaly make two "mapping" table. First one is Label_activity to associate the number of the activity with the name of it (Waling, laying, ...). The second one is a subset of Feature_list that consist on all the feature that concern mean and std. I notice that in the different features names some of them add capital letter for mean (e.g. "angle(Y,gravityMean)" ) therefore when I subset it I made it specific that mean and std may have capital letter as well as small cap. 
 
-*step3: Combining all the different table described aboved in one call FinalTidySet. Then substract from it the features we are interested in. And finaly map the activiy-label with the activity-name to only have a descriptive value for the activity and not a number. 
+* step3: Combining all the different table described aboved in one call FinalTidySet. Then substract from it the features we are interested in. And finaly map the activiy-label with the activity-name to only have a descriptive value for the activity and not a number. 
 
-*step4: Creating the independant tidy data set. I called it TidySetMean. I made the mean by activiy and by subject Id in that order as prescribed and finally write down the final output txt file with the write.table() comment.
+* step4: Creating the independant tidy data set. I called it TidySetMean. I made the mean by activiy and by subject Id in that order as prescribed and finally write down the final output txt file with the write.table() comment.
 
 
